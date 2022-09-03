@@ -8,13 +8,8 @@ import { useQueryParam, StringParam } from 'use-query-params'
 
 // Local libraries
 import './App.css'
-import LoadScripts from './components/load-scripts'
-import WaitingModal from './components/waiting-modal'
+import { LoadScripts, WaitingModal, SelectServerButton, Footer, NavMenu, AppBody } from './components'
 import AsyncLoad from './services/async-load'
-import SelectServerButton from './components/servers/select-server-button'
-import Footer from './components/footer'
-import NavMenu from './components/nav-menu'
-import AppBody from './components/app-body'
 
 // Default restURL for a back-end server.
 let serverUrl = 'https://free-bch.fullstack.cash'
@@ -58,7 +53,6 @@ class App extends React.Component {
   async componentDidMount () {
     try {
       this.addToModal('Loading minimal-slp-wallet')
-
       await this.asyncLoad.loadWalletLib()
 
       this.addToModal('Getting alternative servers')
