@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/bad-url/static/css/main.505581f3.css",
-    "main.js": "/bad-url/static/js/main.617e2c6b.js",
-    "static/media/psf-logo.png": "/bad-url/static/media/psf-logo.3485139af901ffeaf77f.png",
-    "index.html": "/bad-url/index.html",
-    "main.505581f3.css.map": "/bad-url/static/css/main.505581f3.css.map",
-    "main.617e2c6b.js.map": "/bad-url/static/js/main.617e2c6b.js.map"
+    "main.css": "/react-bootstrap-web3-spa/static/css/main.505581f3.css",
+    "main.js": "/react-bootstrap-web3-spa/static/js/main.c94f33ef.js",
+    "static/media/psf-logo.png": "/react-bootstrap-web3-spa/static/media/psf-logo.3485139af901ffeaf77f.png",
+    "index.html": "/react-bootstrap-web3-spa/index.html",
+    "main.505581f3.css.map": "/react-bootstrap-web3-spa/static/css/main.505581f3.css.map",
+    "main.c94f33ef.js.map": "/react-bootstrap-web3-spa/static/js/main.c94f33ef.js.map"
   },
   "entrypoints": [
     "static/css/main.505581f3.css",
-    "static/js/main.617e2c6b.js"
+    "static/js/main.c94f33ef.js"
   ]
 }
