@@ -57,7 +57,10 @@ class App extends React.Component {
 
   async componentDidMount () {
     try {
-      this.addToModal('Loading minimal-slp-wallet')
+      this.addToModal('Loading minimal-slp-wallet.')
+      let blah = 4
+      blah = 6
+      console.log('blah: ', blah)
 
       await this.asyncLoad.loadWalletLib()
 

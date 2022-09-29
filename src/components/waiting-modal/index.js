@@ -26,7 +26,7 @@ function ModalTemplate (props) {
   return (
     <Modal show={show} onHide={handleClose}>
       <Modal.Header closeButton>
-        <Modal.Title>{props.heading}</Modal.Title>
+        <Modal.Title>{props.heading} test</Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <Container>
