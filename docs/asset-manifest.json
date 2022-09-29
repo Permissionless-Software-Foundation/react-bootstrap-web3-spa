@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/react-bootstrap-web3-spa/static/css/main.505581f3.css",
-    "main.js": "/react-bootstrap-web3-spa/static/js/main.bc12a42c.js",
+    "main.js": "/react-bootstrap-web3-spa/static/js/main.c94f33ef.js",
     "static/media/psf-logo.png": "/react-bootstrap-web3-spa/static/media/psf-logo.3485139af901ffeaf77f.png",
     "index.html": "/react-bootstrap-web3-spa/index.html",
     "main.505581f3.css.map": "/react-bootstrap-web3-spa/static/css/main.505581f3.css.map",
-    "main.bc12a42c.js.map": "/react-bootstrap-web3-spa/static/js/main.bc12a42c.js.map"
+    "main.c94f33ef.js.map": "/react-bootstrap-web3-spa/static/js/main.c94f33ef.js.map"
   },
   "entrypoints": [
     "static/css/main.505581f3.css",
-    "static/js/main.bc12a42c.js"
+    "static/js/main.c94f33ef.js"
   ]
 }
