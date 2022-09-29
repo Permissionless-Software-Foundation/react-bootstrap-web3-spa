@@ -8,7 +8,8 @@
 #git merge master
 
 npm run build
-cp -r build docs
+rm -rf docs
+mv build docs
 git add -A
 git commit -m "Updating GitHub page"
 git push
