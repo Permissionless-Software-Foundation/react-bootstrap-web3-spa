@@ -32,6 +32,16 @@ npm run build
 npm run pub
 ```
 
+## Publish to GitHub Pages
+```bash
+# Switch to the gh-pages branch
+git checkout gh-pages
+# Pull in any changes from the master branch
+git merge master
+# Publish to GitHub pages
+npm run pub:ghp
+```
+
 Learn more about alternative deployments in the [deployment directory](./deploy)
 
 ## Support
