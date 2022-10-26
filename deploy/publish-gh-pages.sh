@@ -7,6 +7,7 @@
 #git checkout gh-pages
 #git merge master
 
+rm -rf build
 npm run build
 rm -rf docs
 mv build docs
