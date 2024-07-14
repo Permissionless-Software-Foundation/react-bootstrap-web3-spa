@@ -3,83 +3,62 @@
 */
 
 // Global npm libraries
-import React from 'react'
+import React, { useState } from 'react'
 import { Container, Row, Col, Form, Button, Spinner } from 'react-bootstrap'
 
-// let _this
+function GetBalance (props) {
+  const { wallet } = props
 
-class GetBalance extends React.Component {
-  constructor (props) {
-    super(props)
+  // State
+  const [balance, setBalance] = useState('')
+  const [textInput, setTextInput] = useState('')
 
-    this.state = {
-      balance: '',
-      textInput: '',
-      wallet: props.wallet
-    }
-
-    // Bind 'this' to event handlers
-    this.handleGetBalance = this.handleGetBalance.bind(this)
-
-    // _this = this
-  }
-
-  render () {
-    return (
-
-      <>
-        <Container>
-          <Row>
-            <Col className='text-break' style={{ textAlign: 'center' }}>
-              <Form>
-                <Form.Group className='mb-3' controlId='formBasicEmail'>
-                  <Form.Label>Enter a BCH address to check the balance.</Form.Label>
-                  <Form.Control type='text' placeholder='bitcoincash:qqlrzp23w08434twmvr4fxw672whkjy0py26r63g3d' onChange={e => this.setState({ textInput: e.target.value })} />
-                </Form.Group>
-
-                <Button variant='primary' onClick={this.handleGetBalance}>
-                  Check Balance
-                </Button>
-              </Form>
-            </Col>
-          </Row>
-          <br />
-          <Row>
-            <Col style={{ textAlign: 'center' }}>
-              {this.state.balance}
-            </Col>
-          </Row>
-        </Container>
-      </>
-    )
-  }
-
-  async handleGetBalance (event) {
+  // Button click handler
+  const handleGetBalance = async (event) => {
     try {
-      const textInput = this.state.textInput
-
       // Exit on invalid input
       if (!textInput) return
       if (!textInput.includes('bitcoincash:')) return
 
-      this.setState({
-        balance: (<span>Retrieving balance... <Spinner animation='border' /></span>)
-      })
+      setBalance(<span>Retrieving balance... <Spinner animation='border' /></span>)
 
-      const balance = await this.state.wallet.getBalance({ bchAddress: textInput })
+      const balance = await wallet.getBalance({ bchAddress: textInput })
       console.log('balance: ', balance)
 
-      const bchBalance = this.state.wallet.bchjs.BitcoinCash.toBitcoinCash(balance)
+      const bchBalance = wallet.bchjs.BitcoinCash.toBitcoinCash(balance)
 
-      this.setState({
-        balance: `Balance: ${balance} sats, ${bchBalance} BCH`
-      })
+      setBalance(`Balance: ${balance} sats, ${bchBalance} BCH`)
     } catch (err) {
-      this.setState({
-        balance: (<p><b>Error</b>: {`${err.message}`}</p>)
-      })
+      setBalance(<p><b>Error</b>: {`${err.message}`}</p>)
     }
   }
+
+  return (
+    <>
+      <Container>
+        <Row>
+          <Col className='text-break' style={{ textAlign: 'center' }}>
+            <Form>
+              <Form.Group className='mb-3' controlId='formBasicEmail'>
+                <Form.Label>Enter a BCH address to check the balance.</Form.Label>
+                <Form.Control type='text' placeholder='bitcoincash:qqlrzp23w08434twmvr4fxw672whkjy0py26r63g3d' onChange={e => setTextInput(e.target.value)} />
+              </Form.Group>
+
+              <Button variant='primary' onClick={handleGetBalance}>
+                Check Balance
+              </Button>
+            </Form>
+          </Col>
+        </Row>
+        <br />
+        <Row>
+          <Col style={{ textAlign: 'center' }}>
+            {balance}
+          </Col>
+        </Row>
+      </Container>
+    </>
+  )
 }
 
 export default GetBalance
