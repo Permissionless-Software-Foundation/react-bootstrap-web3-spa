@@ -16,14 +16,6 @@ import Footer from './components/footer'
 import NavMenu from './components/nav-menu'
 import AppBody from './components/app-body'
 
-// Default alternative servers.
-const defaultServerOptions = [
-  { value: 'https://free-bch.fullstack.cash', label: 'https://free-bch.fullstack.cash' },
-  { value: 'https://dev-consumer.psfoundation.info', label: 'https://dev-consumer.psfoundation.info' }
-]
-
-// let _this
-
 function App (props) {
   // BEGIN STATE
 
@@ -36,7 +28,7 @@ function App (props) {
 
   const [menuState, setMenuState] = useState(0)
   const [wallet, setWallet] = useState(false)
-  const [servers, setServers] = useState(defaultServerOptions)
+  const [servers, setServers] = useState([])
 
   // Startup state
   // When the page is loaded, it goes through a series of async network calls
@@ -50,7 +42,7 @@ function App (props) {
   const [showStartModal, setShowStartModal] = useState(true)
   const [modalBody, setModalBody] = useState([])
   const [hideSpinner, setHideSpinner] = useState(false)
-  const [denyClose, setDenyClose] = useState(false)
+  const [denyClose, setDenyClose] = useState(false) // Deny modal to be closed
 
   // Load all the app state into a single object that can be passed to child
   // components.
