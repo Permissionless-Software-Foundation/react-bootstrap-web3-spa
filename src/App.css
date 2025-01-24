@@ -18,3 +18,11 @@
   align-items: center;
   gap: 10px;
 }
+
+.nav-link-active {
+  color: white !important;
+}
+
+.nav-link-inactive {
+  color: gray !important;
+}
