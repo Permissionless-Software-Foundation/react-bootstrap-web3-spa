@@ -13,7 +13,7 @@ import Logo from './psf-logo.png'
 function NavMenu (props) {
   const handleClickEvent = (menuItem) => {
     // Pass the selected menu item up to the parent component.
-    props.menuHandler(menuItem, props.appData)
+    props.appData.setMenuState(menuItem)
   }
 
   return (

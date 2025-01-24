@@ -47,7 +47,7 @@ class ServerSelect extends React.Component {
   handleServerSelect () {
     console.log('This function should navigate to the server selection view.')
 
-    this.state.menuHandler(100, this.state.appData)
+    this.state.appData.setMenuState(100)
   }
 }
 

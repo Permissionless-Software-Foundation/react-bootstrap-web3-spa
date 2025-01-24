@@ -19,7 +19,7 @@ class GistServers {
 
       // Retrieve the gist from github.com.
       const result = await this.axios.get(gistUrl)
-      console.log('result.data: ', result.data)
+      // console.log('result.data: ', result.data)
 
       // Get the current content of the gist.
       const content = result.data.servers
