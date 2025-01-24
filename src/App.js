@@ -90,16 +90,19 @@ function App (props) {
   return (
     <>
       <LoadScripts />
-      <NavMenu appData={appData} />
-      {/** Define View to show */}
-      {
-        appData.showStartModal
-          ? (<UninitializedView appData={appData} />)
-          : (<InitializedView menuState={appData.menuState} appData={appData} />)
-      }
-
-      <SelectServerButton appData={appData} />
-      <Footer appData={appData} />
+      <div className='app-container'>
+        <NavMenu appData={appData} />
+        {/** Define View to show */}
+        <div className='main-content'>
+          {
+            appData.showStartModal
+              ? (<UninitializedView appData={appData} />)
+              : (<InitializedView menuState={appData.menuState} appData={appData} />)
+          }
+          <SelectServerButton appData={appData} />
+        </div>
+        <Footer appData={appData} />
+      </div>
     </>
   )
 }
