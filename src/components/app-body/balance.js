@@ -20,7 +20,12 @@ function GetBalance (props) {
       if (!textInput) return
       if (!textInput.includes('bitcoincash:')) return
 
-      setBalance(<span>Retrieving balance... <Spinner animation='border' /></span>)
+      setBalance(
+        <div className='balance-spinner-container'>
+          <span>Retrieving balance...</span>
+          <Spinner animation='border' />
+        </div>
+      )
 
       const balance = await wallet.getBalance({ bchAddress: textInput })
       console.log('balance: ', balance)

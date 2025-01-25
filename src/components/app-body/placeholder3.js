@@ -3,22 +3,18 @@
 */
 
 // Global npm libraries
-import React from 'react'
+import React, { useEffect } from 'react'
 
-class Placeholder3 extends React.Component {
-  constructor (props) {
-    super(props)
-
+function Placeholder3 (props) {
+  useEffect(() => {
     console.log('Placeholder 3 loaded.')
-  }
+  }, [])
 
-  render () {
-    return (
-      <>
-        <p style={{ padding: '25px' }}>This is placeholder View #3</p>
-      </>
-    )
-  }
+  return (
+    <>
+      <p style={{ padding: '25px' }}>This is placeholder View #3</p>
+    </>
+  )
 }
 
 export default Placeholder3

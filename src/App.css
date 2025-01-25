@@ -1,3 +1,28 @@
 .header {
   text-align: center;
 }
+
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1 0 auto;
+}
+
+.balance-spinner-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-link-active {
+  color: white !important;
+}
+
+.nav-link-inactive {
+  color: gray !important;
+}

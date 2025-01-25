@@ -11,6 +11,7 @@ import { Nav, Navbar, Image } from 'react-bootstrap'
 import Logo from './psf-logo.png'
 
 function NavMenu (props) {
+  const selectedMenu = props.appData.menuState
   const handleClickEvent = (menuItem) => {
     // Pass the selected menu item up to the parent component.
     props.appData.setMenuState(menuItem)
@@ -27,9 +28,27 @@ function NavMenu (props) {
         <Navbar.Toggle aria-controls='responsive-navbar-nav' />
         <Navbar.Collapse id='responsive-navbar-nav'>
           <Nav className='mr-auto'>
-            <Nav.Link href='#' onClick={(e) => handleClickEvent(0)}>Check Balance</Nav.Link>
-            <Nav.Link href='#' onClick={(e) => handleClickEvent(1)}>Placeholder2</Nav.Link>
-            <Nav.Link href='#' onClick={(e) => handleClickEvent(2)}>Placeholder 3</Nav.Link>
+            <Nav.Link
+              className={selectedMenu === 0 ? 'nav-link-active' : 'nav-link-inactive'}
+              href='#'
+              onClick={(e) => handleClickEvent(0)}
+            >
+              Check Balance
+            </Nav.Link>
+            <Nav.Link
+              className={selectedMenu === 1 ? 'nav-link-active' : 'nav-link-inactive'}
+              href='#'
+              onClick={(e) => handleClickEvent(1)}
+            >
+              Placeholder2
+            </Nav.Link>
+            <Nav.Link
+              className={selectedMenu === 2 ? 'nav-link-active' : 'nav-link-inactive'}
+              href='#'
+              onClick={(e) => handleClickEvent(2)}
+            >
+              Placeholder 3
+            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
