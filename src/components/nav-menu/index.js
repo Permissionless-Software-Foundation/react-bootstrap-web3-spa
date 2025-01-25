@@ -12,10 +12,10 @@ import Logo from './psf-logo.png'
 
 function NavMenu (props) {
   const selectedMenu = props.appData.menuState
-  const handleClickEvent = (menuItem) => {
-    // Pass the selected menu item up to the parent component.
-    props.appData.setMenuState(menuItem)
-  }
+  // const handleClickEvent = (menuItem) => {
+  //   // Pass the selected menu item up to the parent component.
+  //   props.appData.setMenuState(menuItem)
+  // }
 
   return (
     <>
@@ -30,22 +30,19 @@ function NavMenu (props) {
           <Nav className='mr-auto'>
             <Nav.Link
               className={selectedMenu === 0 ? 'nav-link-active' : 'nav-link-inactive'}
-              href='#'
-              onClick={(e) => handleClickEvent(0)}
+              href='/balance'
             >
               Check Balance
             </Nav.Link>
             <Nav.Link
               className={selectedMenu === 1 ? 'nav-link-active' : 'nav-link-inactive'}
-              href='#'
-              onClick={(e) => handleClickEvent(1)}
+              href='/placeholder2'
             >
               Placeholder2
             </Nav.Link>
             <Nav.Link
               className={selectedMenu === 2 ? 'nav-link-active' : 'nav-link-inactive'}
-              href='#'
-              onClick={(e) => handleClickEvent(2)}
+              href='/placeholder3'
             >
               Placeholder 3
             </Nav.Link>

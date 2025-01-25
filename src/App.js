@@ -92,8 +92,8 @@ function App (props) {
       <LoadScripts />
       <div className='app-container'>
         <NavMenu appData={appData} />
-        {/** Define View to show */}
-        <div className='main-content'>
+          {/** Define View to show */}
+          <div className='main-content'>
           {
             appData.showStartModal
               ? (<UninitializedView appData={appData} />)
