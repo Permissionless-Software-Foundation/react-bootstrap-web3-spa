@@ -6,20 +6,29 @@
 */
 
 // Global npm libraries
-import React from 'react'
-import { Nav, Navbar, Image } from 'react-bootstrap'
+import React, { useState } from 'react'
+import { Nav, Navbar, Image } from 'react-bootstrap' // Used for Navbar Style and Layouts .
+import { NavLink } from 'react-router-dom' // Used to navigate between routes
+
+// Assets
 import Logo from './psf-logo.png'
 
 function NavMenu (props) {
-  const selectedMenu = props.appData.menuState
-  const handleClickEvent = (menuItem) => {
-    // Pass the selected menu item up to the parent component.
-    props.appData.setMenuState(menuItem)
+  // Get the current path
+  const { currentPath } = props.appData
+
+  // Navbar state
+  const [expanded, setExpanded] = useState(false)
+
+  // Handle click event
+  const handleClickEvent = () => {
+    // Collapse the navbar
+    setExpanded(false)
   }
 
   return (
     <>
-      <Navbar collapseOnSelect expand='xxxl' bg='dark' variant='dark' style={{ paddingRight: '20px' }}>
+      <Navbar expanded={expanded} onToggle={setExpanded} expand='xxxl' bg='dark' variant='dark' style={{ paddingRight: '20px' }}>
         <Navbar.Brand href='#home' style={{ paddingLeft: '20px' }}>
           <Image src={Logo} thumbnail width='50' />{' '}
           PSF Web3 Demo
@@ -28,27 +37,28 @@ function NavMenu (props) {
         <Navbar.Toggle aria-controls='responsive-navbar-nav' />
         <Navbar.Collapse id='responsive-navbar-nav'>
           <Nav className='mr-auto'>
-            <Nav.Link
-              className={selectedMenu === 0 ? 'nav-link-active' : 'nav-link-inactive'}
-              href='#'
-              onClick={(e) => handleClickEvent(0)}
+            <NavLink
+              className={(currentPath === '/balance' || currentPath === '/') ? 'nav-link-active' : 'nav-link-inactive'}
+              to='/balance'
+              onClick={handleClickEvent}
             >
               Check Balance
-            </Nav.Link>
-            <Nav.Link
-              className={selectedMenu === 1 ? 'nav-link-active' : 'nav-link-inactive'}
-              href='#'
-              onClick={(e) => handleClickEvent(1)}
+            </NavLink>
+            <NavLink
+              className={currentPath === '/placeholder2' ? 'nav-link-active' : 'nav-link-inactive'}
+              to='/placeholder2'
+              onClick={handleClickEvent}
+
             >
               Placeholder2
-            </Nav.Link>
-            <Nav.Link
-              className={selectedMenu === 2 ? 'nav-link-active' : 'nav-link-inactive'}
-              href='#'
-              onClick={(e) => handleClickEvent(2)}
+            </NavLink>
+            <NavLink
+              className={currentPath === '/placeholder3' ? 'nav-link-active' : 'nav-link-inactive'}
+              to='/placeholder3'
+              onClick={handleClickEvent}
             >
               Placeholder 3
-            </Nav.Link>
+            </NavLink>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
