@@ -4,7 +4,6 @@
 import React from 'react'
 import WaitingModal from './waiting-modal'
 import AppBody from './app-body'
-
 // This is rendered *before* the BCH wallet is initialized.
 export function UninitializedView (props = {}) {
   // console.log('UninitializedView props: ', props)

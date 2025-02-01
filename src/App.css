@@ -21,8 +21,13 @@
 
 .nav-link-active {
   color: white !important;
+  text-decoration: none;
+  padding: 0.5rem;
 }
 
 .nav-link-inactive {
   color: gray !important;
+  text-decoration: none;
+  padding: 0.5rem;
+
 }

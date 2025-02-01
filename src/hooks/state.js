@@ -1,7 +1,9 @@
 import { useState } from 'react'
 import { useQueryParam, StringParam } from 'use-query-params'
-
+import { useLocation } from 'react-router-dom'
 function useAppState () {
+  const location = useLocation()
+
   // Get the CashStack URL from query parameter or use default
   let [restURL] = useQueryParam('restURL', StringParam)
   if (!restURL) restURL = 'https://free-bch.fullstack.cash'
@@ -44,7 +46,9 @@ function useAppState () {
     hideSpinner,
     setHideSpinner,
     denyClose,
-    setDenyClose
+    setDenyClose,
+    currentPath: location.pathname
+
   }
 }
 

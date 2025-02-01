@@ -9,7 +9,6 @@ import React, { useEffect, useCallback } from 'react'
 import './App.css'
 import LoadScripts from './components/load-scripts'
 import AsyncLoad from './services/async-load'
-import SelectServerButton from './components/app-body/servers/select-server-button'
 import Footer from './components/footer'
 import NavMenu from './components/nav-menu'
 import useAppState from './hooks/state'
@@ -92,14 +91,13 @@ function App (props) {
       <LoadScripts />
       <div className='app-container'>
         <NavMenu appData={appData} />
-          {/** Define View to show */}
-          <div className='main-content'>
+        {/** Define View to show */}
+        <div className='main-content'>
           {
             appData.showStartModal
               ? (<UninitializedView appData={appData} />)
               : (<InitializedView menuState={appData.menuState} appData={appData} />)
           }
-          <SelectServerButton appData={appData} />
         </div>
         <Footer appData={appData} />
       </div>

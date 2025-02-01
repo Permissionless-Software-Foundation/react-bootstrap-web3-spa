@@ -8,12 +8,16 @@ import { QueryParamProvider } from 'use-query-params'
 
 // Importing the Bootstrap CSS
 import 'bootstrap/dist/css/bootstrap.min.css'
+import { BrowserRouter } from 'react-router-dom'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 
 root.render(
   <QueryParamProvider>
-    <App />
+    {/* <BrowserRouter> should be wrap all the components that use react-router-dom */}
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </QueryParamProvider>
 )
 
