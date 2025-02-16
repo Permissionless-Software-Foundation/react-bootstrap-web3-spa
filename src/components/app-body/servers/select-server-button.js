@@ -9,7 +9,7 @@ import { Container, Row, Col, Button } from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom'
 
 const ServerSelect = (props) => {
-  const { linkTo } = props
+  const { linkTo, appData } = props
 
   // Use the navigate function to navigate to the servers view
   const navigate = useNavigate()
@@ -31,6 +31,7 @@ const ServerSelect = (props) => {
             <h5>
               Having trouble loading? Try selecting a different back-end server.
             </h5>
+            <p style={{ fontStyle: 'italic' }}>Current Server : {appData.serverUrl}</p>
             <Button variant='warning' onClick={handleServerSelect}>
               Select a different back end server
             </Button>

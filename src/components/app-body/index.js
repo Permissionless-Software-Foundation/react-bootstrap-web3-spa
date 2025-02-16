@@ -31,7 +31,7 @@ function AppBody (props) {
         <Route path='/servers' element={<ServerSelectView appData={appData} />} />
       </Routes>
       {/** Show in all paths except the servers view */}
-      {appData.currentPath !== '/servers' && <SelectServerButton linkTo='/servers' />}
+      {appData.currentPath !== '/servers' && <SelectServerButton linkTo='/servers' appData={appData} />}
     </>
   )
 }

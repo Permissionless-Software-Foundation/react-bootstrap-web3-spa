@@ -1,14 +1,22 @@
 import { useState } from 'react'
-import { useQueryParam, StringParam } from 'use-query-params'
 import { useLocation } from 'react-router-dom'
+import useLocalStorageState from 'use-local-storage-state'
+
 function useAppState () {
   const location = useLocation()
 
-  // Get the CashStack URL from query parameter or use default
-  let [restURL] = useQueryParam('restURL', StringParam)
-  if (!restURL) restURL = 'https://free-bch.fullstack.cash'
+  // Load Local storage Data
+  const [lsState, setLSState, { removeItem }] = useLocalStorageState('bchWalletState-template', {
+    ssr: true,
+    defaultValue: {
+      serverUrl: 'https://free-bch.fullstack.cash' // Default server
+    }
+  })
 
-  const [serverUrl, setServerUrl] = useState(restURL)
+  console.log('lsState: ', lsState)
+
+  // Initialize  data states
+  const [serverUrl, setServerUrl] = useState(lsState.serverUrl) // Default server url
   const [menuState, setMenuState] = useState(0)
   const [wallet, setWallet] = useState(false)
   const [servers, setServers] = useState([])
@@ -23,6 +31,14 @@ function useAppState () {
   const [modalBody, setModalBody] = useState([])
   const [hideSpinner, setHideSpinner] = useState(false)
   const [denyClose, setDenyClose] = useState(false)
+
+  // Update local storage
+  const updateLocalStorage = (lsObj) => {
+    // Progressively overwrite the LocalStorage state.
+    const newObj = Object.assign({}, lsState, lsObj)
+
+    setLSState(newObj)
+  }
 
   return {
     serverUrl,
@@ -47,7 +63,9 @@ function useAppState () {
     setHideSpinner,
     denyClose,
     setDenyClose,
-    currentPath: location.pathname
+    currentPath: location.pathname,
+    updateLocalStorage,
+    removeLocalStorageItem: removeItem
 
   }
 }
