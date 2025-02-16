@@ -16,8 +16,9 @@ function ServerSelectView (props) {
   const handleReloadServer = (event) => {
     const target = event.target.id
     console.log('server target: ', target)
-
-    window.location.href = `/?restURL=${target}`
+    appData.updateLocalStorage({ serverUrl: target })
+    // Reload the page
+    window.location.href = '/'
   }
 
   return (

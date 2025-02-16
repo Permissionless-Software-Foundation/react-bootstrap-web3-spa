@@ -29,6 +29,7 @@ function App (props) {
       return prevBody
     })
   }, [])
+
   /** Load all required data before component start. */
   useEffect(() => {
     async function asyncEffect () {
