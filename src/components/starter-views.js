@@ -20,7 +20,7 @@ export function UninitializedView (props = {}) {
         denyClose={appData.denyClose}
       />
       {
-        props.asyncInitFinished
+        appData.asyncInitFinished
           ? <AppBody menuState={100} wallet={appData.wallet} appData={appData} />
           : null
       }

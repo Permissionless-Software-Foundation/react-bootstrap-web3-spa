@@ -41,6 +41,7 @@ class AsyncLoad {
     const wallet = new this.BchWallet(null, options)
 
     await wallet.walletInfoPromise
+    await wallet.initialize()
     // console.log(`mnemonic: ${wallet.walletInfo.mnemonic}`)
 
     this.wallet = wallet
