@@ -45,7 +45,7 @@ function GetBalance (props) {
           <Col className='text-break' style={{ textAlign: 'center' }}>
             <Form>
               <Form.Group className='mb-3' controlId='formBasicEmail'>
-                <Form.Label>Enter a BCH address to check the balance.</Form.Label>
+                <Form.Label>Enter any BCH address to query its balance on the blockchain.</Form.Label>
                 <Form.Control type='text' placeholder='bitcoincash:qqlrzp23w08434twmvr4fxw672whkjy0py26r63g3d' onChange={e => setTextInput(e.target.value)} />
               </Form.Group>
 
