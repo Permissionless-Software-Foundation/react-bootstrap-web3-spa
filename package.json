@@ -39,7 +39,9 @@
     ]
   },
   "devDependencies": {
+    "husky": "^9.1.7",
     "minimal-slp-wallet": "5.13.1",
+    "semantic-release": "^24.2.3",
     "standard": "17.0.0",
     "web3.storage": "4.3.0"
   }
