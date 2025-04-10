@@ -41,17 +41,21 @@ function ServerSelectView (props) {
         <Card.Body>
           <Row>
             <Col style={{ textAlign: 'center' }}>
-              <h2>Select Alternative Server</h2>
+              <h2>Configuration</h2>
+              <p>
+                This page allows you to change configuration settings for different
+                back end services. This page is for advanced users only.
+              </p>
+            </Col>
+          </Row>
+          <hr />
+
+          <Row className='justify-content-center'>
+            <Col xs={12} md={6}>
               <p>
                 Select an alternative server below. The app will reload and use
                 the selected server.
               </p>
-            </Col>
-          </Row>
-          <br />
-
-          <Row className='justify-content-center'>
-            <Col xs={12} md={6}>
               <Form.Select
                 value={selectedServer}
                 onChange={handleServerChange}
