@@ -59,6 +59,13 @@ function NavMenu (props) {
             >
               Placeholder 3
             </NavLink>
+            <NavLink
+              className={currentPath === '/configuration' ? 'nav-link-active' : 'nav-link-inactive'}
+              to='/configuration'
+              onClick={handleClickEvent}
+            >
+              Configuration
+            </NavLink>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
